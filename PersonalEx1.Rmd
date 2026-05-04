@@ -1,0 +1,25 @@
+---
+title: "PersonalExer1"
+author: "Solange Uw"
+date: "2026-05-04"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+plot(pressure)
+```
+
+```{r}
+Vec= c(2,1,3,4,12,17)
+mean(Vec)
+mode(Vec)
+median(Vec)
+plot(mean(Vec))
+plot(Vec)
+
+```
+
