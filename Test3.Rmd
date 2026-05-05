@@ -1,0 +1,82 @@
+---
+title: "Test3"
+author: "Solange Uw"
+date: "2026-05-05"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# Create a vector
+numbers <- c(10, 20, 30, 40, 50)
+```
+
+
+```{r}
+# Basic statistics
+mean(numbers)
+median(numbers)
+sum(numbers)
+min(numbers)
+max(numbers)
+```
+
+```{r}
+# Create and plot data
+x <- c(1, 2, 3, 4, 5)
+y <- c(2, 4, 6, 8, 10)
+
+plot(x, y, main="My First Plot", 
+     xlab="X axis", ylab="Y axis", 
+     col="blue", type="b")
+```
+```{r}
+# Create a simple table
+students <- data.frame(
+  Name = c("Alice", "Bob", "Carol"),
+  Age = c(22, 25, 23),
+  Score = c(85, 90, 78)
+)
+```
+
+
+```{r}
+# View and summarize
+print(students)
+summary(students)
+```
+```{r}
+system("git pull origin main --allow-unrelated-histories")
+```
+```{r}
+
+system("git add .")
+#system('git commit -m "Add new files"')
+system('git config --global user.email "solangeu27@gmail.com"')
+system('git config --global user.name "Solangeu27"')
+
+system("git add .")
+system('git commit -m "Add new files"')
+
+system("git push origin main --force")
+
+
+
+
+
+
+
+
+
+
+
+
+```
+
+```{r}
+
+```
+
