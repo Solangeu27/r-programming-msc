@@ -1,0 +1,76 @@
+---
+title: "My First Assignment"
+author: "Solange Uwiringiyimana"
+date: "2026-05-07"
+output:
+  word_document: default
+  html_document: default
+---
+#Question:
+##Import data from both statistical package and database management system
+
+###generate and save data in statistical package :
+```{r}
+library(haven)
+```
+
+
+```{r}
+st_data<- data.frame(st_id= numeric(0), f_name=character(0), l_name=character(0),semester=numeric(0))
+```
+```{r}
+st_data<- edit(st_data)
+```
+```{r}
+View(st_data)
+```
+```{r}
+write_sav(st_data, "st_data.sav")
+```
+##import data from SP:
+
+```{r}
+getwd()
+```
+```{r}
+d_from_sp<- read_sav("C:/Users/Soluc/OneDrive/Documents/r-programming-msc/Assignments/st_data.sav")
+```
+```{r}
+print(d_from_sp)
+View(d_from_sp)
+```
+
+#data from DBMS
+
+```{r}
+library(RSQLite)
+library(DBI)
+library(RMySQL)
+```
+
+
+```{r}
+con<- dbConnect(RSQLite::SQLite(),"st_database.db")
+```
+```{r}
+dbWriteTable(con,"st_table", st_data, overwrite = TRUE)
+```
+
+#imprting data from DBMS:
+
+```{r}
+d_from_db <- dbReadTable(con,"st_table")
+```
+```{r}
+View(d_from_db)
+```
+#or
+```{r}
+da_from_db<- dbGetQuery(con, "SELECT * FROM st_table")
+```
+```{r}
+print (da_from_db)
+```
+
+
+
